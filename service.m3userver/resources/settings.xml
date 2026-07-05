@@ -1,0 +1,19 @@
+<settings>
+    <category label="Servidor">
+
+        <setting
+            id="ip_local"
+            type="text"
+            label="IP local"
+            default=""
+            readonly="true"/>
+
+        <setting
+            id="puerto"
+            type="number"
+            label="Puerto HTTP"
+            default="8090"/>
+		
+
+    </category>
+</settings>

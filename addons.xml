@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="repository.tvliveapp"
+       name="TVLive Repository"
+       version="1.0.0"
+       provider-name="TVLive">
+
+    <extension point="xbmc.addon.repository">
+        <dir>
+            <info compressed="false">https://tvliveapp.github.io/kodi-repo/addons.xml</info>
+            <checksum>https://tvliveapp.github.io/kodi-repo/addons.xml.md5</checksum>
+            <datadir zip="true">https://tvliveapp.github.io/kodi-repo/</datadir>
+        </dir>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <assets>
+            <icon>icon.png</icon>
+            <fanart>fanart.jpg</fanart>
+        </assets>
+
+        <summary>TVLive Repository</summary>
+        <description>Repositorio de addons IPTV</description>
+        <platform>all</platform>
+    </extension>
+
+</addon>
+<addon 
+ id="service.m3userver"
+ name="Servidor Web M3U"
+ version="1.0.0"
+ provider-name="IPTV Local">
+
+
+<requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+     <import addon="script.module.requests" version="2.31.0"/>
+
+    <import addon="script.module.beautifulsoup4" version="4.12.0"/>
+</requires>
+
+
+<!-- Servicio automático -->
+<extension 
+ point="xbmc.service"
+ library="main.py"
+ start="startup"/>
+
+
+<!-- Ventana principal -->
+<extension 
+ point="xbmc.python.pluginsource"
+ library="default.py"
+>
+
+
+    <provides>video</provides>
+
+
+</extension>
+
+
+<extension point="xbmc.addon.metadata">
+
+    <summary>
+    Servidor HTTP M3U
+    </summary>
+
+    <platform>all</platform>
+
+</extension>
+
+
+</addon>
+</addons>
