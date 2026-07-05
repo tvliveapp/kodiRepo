@@ -7,9 +7,9 @@
 
     <extension point="xbmc.addon.repository">
         <dir>
-            <info compressed="false">https://tvliveapp.github.io/kodi-repo/addons.xml</info>
-            <checksum>https://tvliveapp.github.io/kodi-repo/addons.xml.md5</checksum>
-            <datadir zip="true">https://tvliveapp.github.io/kodi-repo/</datadir>
+            <info compressed="false">https://raw.githubusercontent.com/tvliveapp/kodiRepo/refs/heads/main/addons.xml</info>
+            <checksum>https://raw.githubusercontent.com/tvliveapp/kodiRepo/refs/heads/main/addons.xml.md5</checksum>
+            <datadir zip="true">https://github.com/tvliveapp/kodiRepo/raw/refs/heads/main/zips/</datadir>
         </dir>
     </extension>
 
