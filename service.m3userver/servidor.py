@@ -6,6 +6,10 @@ from urllib.parse import urlparse, parse_qs, unquote
 from scrapers.playback import extraer_playback
 from scrapers.merge_lists import unir_listas_m3u
 
+from scrapers.scraper_streamhdx import extraer_playback as extraer_playback_streamhdx
+scrapers={"streamhdx":extraer_playback_streamhdx}
+
+
 import xbmc
 
 
@@ -83,7 +87,7 @@ class Handler(
             referer = parametros.get("referer", [None])[0]
             if referer:
                 referer = unquote(referer)
-
+            scraper = parametros.get("scraper", [None])[0]
 
             if url:
 
@@ -93,11 +97,13 @@ class Handler(
                     xbmc.LOGINFO
                 )
 
-
-                stream = extraer_playback(
-                    url,referer
-                )
-
+                if (scraper):
+                    stream=scrapers[scraper](url)
+                else:
+                    stream = extraer_playback(
+                        url,referer
+                    )
+                
 
                 if stream:
 

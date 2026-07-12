@@ -168,6 +168,25 @@ threading.Thread(
 # ======================
 # SCRAPERS
 # ======================
+
+from scrapers.scraper_streamtp_json import crear_lista as crear_scraper_streamtp_json
+
+
+iniciar_scraper(
+    "streamtpsbs",
+    crear_scraper_streamtp_json,
+    3600
+)
+
+
+from scrapers.scraper_streamhdx import crear_lista as crear_streamhdx
+
+iniciar_scraper(
+    "streamhdx",
+    crear_streamhdx,
+    8000
+)
+
 from scrapers.scraper_streamt import crear_lista as crear_streamtp
 
 
